@@ -4,3 +4,4 @@ if __name__ == '__main__':
     y = 20
     z = x + y
     print(x, y, z)
+    print("中文")
