@@ -43,3 +43,6 @@ print(symbol2, price2, amount2, total2)
 print("--------------------")
 print("%-10s%5d%7d%10d" % (symbol1, price1, amount1, total1))
 print("%-10s%5d%7d%10d" % (symbol2, price2, amount2, total2))
+
+#　使用format
+print("身高:{0} 體重{1}" .format(170.0, 60.0))
