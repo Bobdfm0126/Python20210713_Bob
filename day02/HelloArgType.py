@@ -5,3 +5,14 @@ print(w, type(w))
 print(score, type(score))
 print(valid, type(valid))
 print(name, type(name))
+
+# 保留字
+print(keyword, kwlist)
+
+#刪除變數 ?
+amount = 100
+print("amount:", amount)
+
+del amount
+
+print("amount:", amount) # 錯誤訊息
