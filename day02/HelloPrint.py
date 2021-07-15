@@ -34,5 +34,12 @@ print("%-4d" % 7)
 print("%-4d" % 77)
 print("%-4d" % 777)
 print("%-4d" % 7777)
+amoount = 120
+total2 = price2 * amount2
 
-
+print("--------------------")
+print(symbol1, price1, amount1, total1)
+print(symbol2, price2, amount2, total2)
+print("--------------------")
+print("%-10s%5d%7d%10d" % (symbol1, price1, amount1, total1))
+print("%-10s%5d%7d%10d" % (symbol2, price2, amount2, total2))
