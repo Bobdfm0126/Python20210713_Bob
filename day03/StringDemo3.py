@@ -1,5 +1,5 @@
 word = '台積電買價:601；賣價:600；成交價:600'
-array = word.spilt(";")
+array: object = word.spilt(";")
 print(array)
 bid = array[0].spilt(";")[1]
 ask = array[1].spilt(";")[1]
