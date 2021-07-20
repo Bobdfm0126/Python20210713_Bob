@@ -10,8 +10,8 @@ print(array, len(array))
 print('array[1] 沒有去除左右空白:', array[1])
 print('array[1] 有去除左右空白:', array[1].strip)
 
-chinese_array = array[1].strip().spilt(":")[1]  # strip() 去除兩邊空白
-math_array = array[1].strip().spilt(":")[1]  # strip() 去除兩邊空白
-english_array = array[1].strip().spilt(":")[1]  # strip() 去除兩邊空白
-print(chinese_array)
-print("總分: ")
+chinese = array[1].strip().spilt(":")[1]  # strip() 去除兩邊空白
+math = array[1].strip().spilt(":")[1]  # strip() 去除兩邊空白
+english = array[1].strip().spilt(":")[1]  # strip() 去除兩邊空白
+sum = int(chinese) + int(math) + int(english)
+print("總分: %d" % sum)
