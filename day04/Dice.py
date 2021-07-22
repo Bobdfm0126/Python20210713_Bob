@@ -5,13 +5,24 @@ import random as r
 # 11,12,13,14,15,16,17,18 <- 猜大
 
 if __name__ == '__main__':
+    dice_log = []  # 用來記錄每一次骰子的點數(dice_number)
     balance = 100  # 現金餘額
     while True:
-        guess = int(input('現金餘額: $%d , 猜大小, 大=1, 小=2, 離開=0: ' % balance))
+        # 判斷現金餘額
+        if balance <= 0:
+            print("現金餘額 $%d 不足，請離場～" % balance)
+            break;
+        guess = int(input('現金餘額: $%d , 猜大小, 大=1, 小=2, 離開=0, 看log=9: ' % balance))
+
         # 判斷 guess
         if guess == 0:
             print('離開')
             break;
+
+        if guess == 9:
+            print('看 dice_log:', dice_log)
+            continue;
+
         # 下注:
         while True:
             bet = int(input('請下注 (金額不可超過 $%d): ' % balance))
@@ -26,6 +37,8 @@ if __name__ == '__main__':
 
         # 擲骰子
         dice_number = r.randint(1, 6) + r.randint(1, 6) + r.randint(1, 6)
+        # log 紀錄
+        dice_log.append(dice_number)
 
         if guess == 1:  # 猜大
             if(dice_number > 10):
@@ -44,3 +57,6 @@ if __name__ == '__main__':
         else:
             print('資料不正確，請重新輸入')
             continue
+
+    # 顯示 log
+    print(dice_log)
