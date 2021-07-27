@@ -14,13 +14,17 @@
 '''
 import random
 
-ans = random.randit(1, 99)
+ans = random.randint(1, 99)
 min, max = 0, 100
 
 while True:
     # User 猜
     guess = input('請在%d~%d 間猜一個數字:' % (min, max))
     guess = int(guess) #字串轉數字
+    # 驗證範圍 ?
+    if (guess <= min or guess >= max):
+        print('範圍錯誤, 請重新輸入 !')
+        continue
     # 判斷是否答對 ?
     if guess < ans:
         min = guess
