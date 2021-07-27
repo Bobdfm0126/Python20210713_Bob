@@ -40,11 +40,13 @@ def lotto4Stars():
     print('四星彩:', lotto)
 
 def lottoBig():
+    n = 7
     lotto = set()
-    while len(lotto) < 7:
-        lotto.add(random.randint(1, 39))
+    while len(lotto) < n:
+        lotto.add(random.randint(1, 49))
 
-    print('大樂透:', lotto)
+    print('大樂透所有獎號:', lotto)
+    print('大樂透:', list(lotto)[0:n-1], "特別號", list(lotto)[n-1])
 
 
 if __name__ == '__main__':
