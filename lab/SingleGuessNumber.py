@@ -11,16 +11,27 @@
 '''
 使用者猜 77
 對了 !
+
+ps:
+最多猜7次， 若超過則程式自動結束(while)
 '''
 import random
 
 ans = random.randint(1, 99)
 min, max = 0, 100
+max_amount = 7
+cur_amount = 0
 
 while True:
-    # User 猜
+    # 次數 + 1
+    cur_amount = cur_amount + 1
+    if cur_amount > max_amount:
+        print('次數用完，程式結束。答案:%d' % ans)
+        break
+
+    # User 猜 (最多猜7次)
     guess = input('請在%d~%d 間猜一個數字:' % (min, max))
-    guess = int(guess) #字串轉數字
+    guess = int(guess) # 字串轉數字
     # 驗證範圍 ?
     if (guess <= min or guess >= max):
         print('範圍錯誤, 請重新輸入 !')
