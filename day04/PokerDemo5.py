@@ -17,7 +17,7 @@ def getScore(cards): # 計算總分
     return score
 
 
-if __name__ == '__main__':
+def playGame():
     pokers = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'] * 4 * 4
     r.shuffle(pokers)
 
@@ -60,16 +60,21 @@ if __name__ == '__main__':
     if my_score <= 10.5 and pc_score <= 10.5:
         if my_score > pc_score:
             print("Winner: User")
+            return 1
         elif my_score < pc_score:
             print("Winner: PC")
+            return -1
         else:
             print("平手")
+            return 0
     elif my_score <= 10.5 and pc_score >= 10.5:
         print("Winner: User")
+        return 1
     elif my_score > 10.5 and pc_score <= 10.5:
         print("Winner: PC")
+        return -1
     else:
         print("平手(都爆了)")
-
+        return 0
 
 
