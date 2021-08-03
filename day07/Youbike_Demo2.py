@@ -1,9 +1,11 @@
-
 import json
 import day07.UTI as u
+import requests
 
-file = open('桃園公共自行車即時服務資料.json', 'r', encoding='utf-8')
-data = file.read()
+#file = open('桃園公共自行車即時服務資料.json', 'r', encoding='utf-8')
+#data = file.read()
+url = "https://data.tycg.gov.tw/opendata/datalist/datasetMeta/download?id=5ca2bfc7-9ace-4719-88ae-4034b9a5a55c&rid=a1b4714b-3b75-4ff8-a8f2-cc377e4eaa0f"
+data = requests.get(url).text
 youbike = json.loads(data)
 
 # Lab 請列出所有站台的名稱 sna
@@ -13,7 +15,7 @@ youbike = json.loads(data)
 # 我所在地的經緯度 24.99047, 121.31187 桃園市民權路6號
 my_lat = 24.99047
 my_lng = 121.31187
-d = 200 #(公尺)m
+d = 400  # (公尺)m
 for no in range(2001, 2412):
     sno = str(no)
     try:
@@ -24,8 +26,7 @@ for no in range(2001, 2412):
         tot = int(youbike['retVal'][sno]['tot'])
         sbi = int(youbike['retVal'][sno]['sbi'])
         bemp = int(youbike['retVal'][sno]['bemp'])
-        print(sno, sna, "%dm" % int(m), "%.1fkm" % km, tot, sbi, bemp)
         if m <= d:
-            print(sno, sna, '%dn' % int(n), '%.lfkm' % km, tot, sbi, bemp)
+            print(sno, sna, "%dm" % int(m), "%.1fkm" % km, tot, sbi, bemp)
     except:
         pass
