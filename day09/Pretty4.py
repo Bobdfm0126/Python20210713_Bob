@@ -18,4 +18,3 @@ def exchange(money):
 
 if __name__ == '__main__':
     exchange(10000)
-© 2021 GitHub, Inc.
