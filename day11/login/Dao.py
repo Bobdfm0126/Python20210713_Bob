@@ -16,3 +16,7 @@ class UserDao:
 
     def find_all_user(self):
         return self.__users
+
+
+    def add_user(self, user):
+        self.__users.append(user)
