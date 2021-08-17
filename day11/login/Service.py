@@ -1,6 +1,6 @@
 # 服務登入所有相關作業
-from lab.login.Dao import UserDao
-from lab.login.Model import User
+from day11.login.Dao import User
+from day11.login import User
 
 
 class LoginError(Exception):
@@ -34,3 +34,20 @@ class UserService:
 
     def get_users(self):
         return self.__dao.find_all_user()
+
+    def update_password(self, username, password, new_password):
+        user = self.__dao.find_user(username)
+        if user is not None:
+            if user.password == password:
+                self.__dao.update_password(username, new_password)
+            else:
+                print('原密碼不正確')
+        else:
+            print('查無此人')
+
+    def delete_user(self, username):
+        user = self.__dao.find_user(username)
+        if user is not None:
+            self.__dao.delete_user(user)
+        else:
+            print('查無此人')
