@@ -1,4 +1,5 @@
 import sqlite3
+from sqlite3 import Cursor
 
 sql = 'create table if not exists lotto(' \
       'id integer primary key autoincrement' \
@@ -7,7 +8,7 @@ sql = 'create table if not exists lotto(' \
       'n3 integer, ' \
       'n4 integer, ' \
       'n5 integer, ' \
-      'n6 integer' \ 
+      'n6 integer' \
       ')'
 
 conn = sqlite3.connect('lotto.db')
