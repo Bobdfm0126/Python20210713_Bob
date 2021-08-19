@@ -1,7 +1,7 @@
 # 在 10000 期中， 每一個數字所出現的次數為何?
 import sqlite3
 
-conn = sqlite3.connect('../lotto_db')
+conn = sqlite3.connect('../EMP/lotto_db')
 cursor = conn.cursor()
 
 for i in range(49):
