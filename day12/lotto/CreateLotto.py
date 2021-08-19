@@ -1,8 +1,7 @@
 import sqlite3
-from sqlite3 import Cursor
 
 sql = 'create table if not exists lotto(' \
-      'id integer primary key autoincrement' \
+      'id integer primary key autoincrement,' \
       'n1 integer, ' \
       'n2 integer, ' \
       'n3 integer, ' \
